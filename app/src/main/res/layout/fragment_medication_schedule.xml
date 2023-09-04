@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.MedicationScheduleFragment">
 
+    
+
     <LinearLayout
         android:id="@+id/dailySchedule"
         android:layout_width="match_parent"
@@ -18,6 +20,7 @@
             android:layout_height="match_parent"
             style="@style/standardTextView"
             android:fontFamily="@font/montserratregular"/>
+
 
         <LinearLayout
             android:id="@+id/medicationSchedule"

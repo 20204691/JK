@@ -53,53 +53,48 @@
         android:src="@drawable/sun"></ImageView>
 
 
-
-
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
         android:id="@+id/slideupsun"
+        android:layout_width="341dp"
+        android:layout_height="66dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="300dp"
-        app:layout_constraintStart_toStartOf="@id/sunimageview"
-        app:layout_constraintTop_toBottomOf="@id/sunimageview"
-        app:layout_constraintEnd_toEndOf="@id/sunimageview"
+        android:adjustViewBounds="true"
+        android:src="@drawable/slideupsun"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/slideupsun"></ImageView>
-
+        app:layout_constraintEnd_toEndOf="@id/sunimageview"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@id/sunimageview"
+        app:layout_constraintTop_toBottomOf="@+id/sunimageview"
+        app:layout_constraintVertical_bias="0.837"
+        tools:ignore="MissingConstraints"></ImageView>
 
     <TextView
         android:id="@+id/detailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/slideupsun"
-        app:layout_constraintEnd_toEndOf="@id/slideupsun"
-        app:layout_constraintTop_toTopOf="@id/slideupsun"
-        app:layout_constraintBottom_toBottomOf="@id/slideupsun"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginBottom="100dp"
+        android:fontFamily="@font/montserratregular"
         android:text="Swipe up to start tracking"
-
-
-        android:fontFamily="@font/manropebold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/slideupsun"
+        app:layout_constraintEnd_toEndOf="@id/slideupsun"
+        app:layout_constraintStart_toStartOf="@id/slideupsun"
+        app:layout_constraintTop_toTopOf="@id/slideupsun" />
 
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintStart_toStartOf="@id/slideupsun"
-        app:layout_constraintEnd_toEndOf="@id/slideupsun"
-        app:layout_constraintTop_toTopOf="@id/slideupsun"
-        app:layout_constraintBottom_toTopOf="@id/detailTitle"
+        android:id="@+id/imageView7"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/arrowup"
-        app:tint="@color/white"></ImageView>
-
-
-
+        android:src="@drawable/arrowup1"
+        app:layout_constraintBottom_toTopOf="@+id/slideupsun"
+        app:layout_constraintEnd_toEndOf="@id/slideupsun"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@id/slideupsun"
+        app:layout_constraintTop_toBottomOf="@+id/sunimageview"
+        app:layout_constraintVertical_bias="0.821"></ImageView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
