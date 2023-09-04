@@ -50,7 +50,7 @@ public class Settings extends AppCompatActivity {
 
         setTimeBeforeDoseRestrictionSwitch();
         setEnableNotificationSwitch();
-        setThemeMenu();
+
     }
 
     /**
@@ -161,65 +161,6 @@ public class Settings extends AppCompatActivity {
     /**
      * Prepares the menu for themes
      */
-    private void setThemeMenu() {
-        MaterialAutoCompleteTextView themeSelector = findViewById(R.id.themeSelector);
-        String savedTheme = db.getPreferences().getString(THEME);
-
-        themeSelector.setAdapter(createThemeMenuAdapter());
-
-        switch (savedTheme) {
-            case DEFAULT:
-                themeSelector.setText(themeSelector.getAdapter().getItem(0).toString(), false);
-                break;
-            case LIGHT:
-                themeSelector.setText(themeSelector.getAdapter().getItem(1).toString(), false);
-                break;
-            case DARK:
-                themeSelector.setText(themeSelector.getAdapter().getItem(2).toString(), false);
-                break;
-        }
-
-        themeSelector.setOnItemClickListener((parent, view, position, id) ->
-        {
-            switch (position) {
-                case 0:
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                    db.saveTheme(DEFAULT);
-                    break;
-                case 1:
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    db.saveTheme(LIGHT);
-                    break;
-                case 2:
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    db.saveTheme(DARK);
-                    break;
-            }
-
-            themeSelector.clearFocus();
-        });
-
-        themeSelector.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                ArrayList<String> _availableThemes = new ArrayList<>();
-
-                _availableThemes.add(getString(R.string.match_system_theme));
-                _availableThemes.add(getString(R.string.light_mode));
-                _availableThemes.add(getString(R.string.dark_mode));
-
-                themeSelector.setAdapter(createThemeMenuAdapter());
-            }
-        });
-    }
 
     private ArrayAdapter<String> createThemeMenuAdapter() {
         ArrayList<String> availableThemes = new ArrayList<>();
